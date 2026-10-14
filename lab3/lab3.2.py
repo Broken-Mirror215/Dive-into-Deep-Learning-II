@@ -9,13 +9,13 @@ from d2l import torch as d2l
 # def 定义函数，括号里是参数；冒号后缩进的代码属于函数体。
 # 定义函数时不会执行函数体，下面调用 synthetic_data(...) 时才会执行。
 def synthetic_data(w, b, num_examples):
-    x = torch.normal(0, 1, (num_examples, len(w)))
-    y = torch.matmul(x, w) + b
+    x = torch.normal(0, 1, (num_examples, len(w))) # 正态分布随机数
+    y = torch.matmul(x, w) + b  # 这个是矩阵乘法
     y += torch.normal(0, 0.01, y.shape)
     # return 结束本次函数调用；逗号分隔的两个结果会组成一个元组。
     return x, y.reshape(-1, 1)
 
-true_w = torch.tensor([2.0, -3.4]) #what is type?
+true_w = torch.tensor([2.0, -3.4]) #
 true_b = 4.2
 features, labels = synthetic_data(true_w, true_b, 1000)
 # 上面是解包赋值：第一个返回值交给 features，第二个交给 labels。

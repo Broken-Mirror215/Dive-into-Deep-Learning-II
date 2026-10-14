@@ -26,7 +26,7 @@ def relu (X):
 
 #4.2.3模型
 def net (X):
-    X = X.reshape(-1,num_inputs)
+    X = X.reshape(-1,num_inputs) # 这一步是平铺
     H = relu(X@W1 + b1) #这个@ 是矩阵乘法！！！
     return (H@W2 + b2)
 
