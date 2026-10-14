@@ -1,0 +1,12 @@
+# Downloaded datasets
+/data/
+
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local IDE settings
+.idea/
+.vscode/
